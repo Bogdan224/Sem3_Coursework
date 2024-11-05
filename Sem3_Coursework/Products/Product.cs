@@ -46,13 +46,16 @@ namespace Sem3_Coursework.Products
         {
             string res = $"Название: {Name}\n" +
                 $"Группа: {Group}\n" +
-                $"Цена: {Price}\n" +
+                $"Цена: {Price} руб.\n" +
                 $"Описание: {Description}\n" +
                 $"Uri фото: {Photo}\n" +
                 $"Рецепт:\n";
+            int x = 1;
             foreach (var item in Receipt)
-            { 
+            {
+                res += $"Ингредиент {x}\n";
                 res += item.ToString();
+                x++;
             }
             return res;
         }

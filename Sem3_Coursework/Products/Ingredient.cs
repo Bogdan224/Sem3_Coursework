@@ -25,8 +25,8 @@ namespace Sem3_Coursework.Products
         public override string ToString()
         {
             return $"Название: {Name}\n" +
-                $"Вес нетто: {NetWeight}\n" +
-                $"Вес брутто: {GrossWeight}\n";
+                $"Вес нетто: {NetWeight} г.\n" +
+                $"Вес брутто: {GrossWeight} г.\n";
         }
     }
 }

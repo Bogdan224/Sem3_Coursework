@@ -28,8 +28,9 @@ namespace Sem3_Coursework.Products
             {
                 if(value < 0)
                 {
-                    throw new ArgumentOutOfRangeException("Price out of range!");
+                    throw new ArgumentException("Price argument exception!");
                 }
+                price = value;
             }
         }
         public string Description { get; set; }

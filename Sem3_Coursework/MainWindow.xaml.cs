@@ -28,7 +28,11 @@ namespace Sem3_Coursework
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Product product = new Product("Паста Карбонара", ProductGroup.SecondCourse, 320.0, "Лапша с беконом и пастой", new Uri("D:\\Programming\\C#\\University\\Sem3\\Sem3_Coursework\\Images\\"),
+            FinalProduct product = new FinalProduct("Паста Карбонара", 
+                ProductGroup.SecondCourse, 
+                320.0, 
+                "Лапша с беконом и пастой", 
+                new Uri("D:\\Programming\\C#\\University\\Sem3\\Sem3_Coursework\\Images\\"),
                 new List<Ingredient> { 
                     new Ingredient("Лапша", 300, 300),
                     new Ingredient("Бекон", 100, 100)

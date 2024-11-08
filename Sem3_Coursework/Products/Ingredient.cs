@@ -9,8 +9,37 @@ namespace Sem3_Coursework.Products
     public class Ingredient : IComparable<Ingredient>
     {
         public string Name { get; set; }
-        public double NetWeight { get; set; }
-        public double GrossWeight { get; set; }
+        private double netWeight;
+        public double NetWeight 
+        {
+            get
+            {
+                return netWeight;
+            }
+            set
+            {
+                if(value < 0)
+                {
+                    throw new ArgumentOutOfRangeException("NetWeight out of range!");
+                }
+                netWeight = value;
+            }
+        }
+        private double grossWeight;
+        public double GrossWeight 
+        {
+            get
+            {
+                return grossWeight;
+            }
+            set
+            {
+                if( value < 0 )
+                {
+                    throw new ArgumentOutOfRangeException("GrossWeight out of range!");
+                }
+            }
+        }
         public Ingredient(string name, double netWeight, double grossWeight)
         {
             Name = name;

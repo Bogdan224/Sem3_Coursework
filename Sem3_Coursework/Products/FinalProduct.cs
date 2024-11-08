@@ -14,11 +14,24 @@ namespace Sem3_Coursework.Products
     /// <summary>
     /// Класс описывающий свойства продукта
     /// </summary>
-    public class Product
+    public class FinalProduct
     {
         public string Name { get; set; }
         public ProductGroup Group { get; private set; }
-        public double Price { get; set; }
+        private double price;
+        public double Price {
+            get
+            {
+                return price;
+            }
+            set
+            {
+                if(value < 0)
+                {
+                    throw new ArgumentOutOfRangeException("Price out of range!");
+                }
+            }
+        }
         public string Description { get; set; }
         public Uri Photo { get; set; }
         public List<Ingredient> Receipt { get; set; }
@@ -32,7 +45,7 @@ namespace Sem3_Coursework.Products
         /// <param name="description">Описание</param>
         /// <param name="photo">Uri фотографии</param>
         /// <param name="receipt">Список ингредиентов, использующихся в продукте</param>
-        public Product(string name, ProductGroup group, double price, string description, Uri photo, List<Ingredient> receipt)
+        public FinalProduct(string name, ProductGroup group, double price, string description, Uri photo, List<Ingredient> receipt)
         {
             Name = name;
             Group = group;

@@ -82,6 +82,8 @@
   <ItemGroup>
     <Compile Include="Products\FinalProduct.cs" />
     <Compile Include="Products\Ingredient.cs" />
+    <Compile Include="Products\Product.cs" />
+    <Compile Include="Products\Provider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

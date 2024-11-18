@@ -38,6 +38,7 @@ namespace Sem3_Coursework.Products
                 {
                     throw new ArgumentOutOfRangeException("GrossWeight out of range!");
                 }
+                grossWeight = value;
             }
         }
         public Ingredient(string name, double netWeight, double grossWeight)

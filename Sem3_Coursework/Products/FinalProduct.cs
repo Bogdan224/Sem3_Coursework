@@ -12,12 +12,12 @@ namespace Sem3_Coursework.Products
     }
 
     /// <summary>
-    /// Класс описывающий свойства продукта
+    /// Класс описывающий свойства готовой продукции
     /// </summary>
     public class FinalProduct
     {
         public string Name { get; set; }
-        public ProductGroup Group { get; private set; }
+        public ProductGroup Group { get; set; }
         private double price;
         public double Price {
             get
@@ -30,6 +30,7 @@ namespace Sem3_Coursework.Products
                 {
                     throw new ArgumentOutOfRangeException("Price out of range!");
                 }
+                price = value;
             }
         }
         public string Description { get; set; }

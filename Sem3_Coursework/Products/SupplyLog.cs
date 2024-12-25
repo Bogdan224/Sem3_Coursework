@@ -1,20 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using Newtonsoft.Json;
-/*
-    При регистрации поступления продуктов питания на склад требуется заносить следующую информацию по каждой поставке: поставщик; дата поставки;
-    перечень полученных продуктов (с указанием названия, единицы измерения, закупочной цены и количества для каждой позиции).
-*/
 
 namespace Sem3_Coursework.Products
 {
+    [Serializable]
     /// <summary>Полученный продукт с поставки</summary>
     public class ObtainedProduct
     {
-        /// <summary>Название продукта</summary>
-        public string Name { get; set; }
-        /// <summary>Единица измерения</summary>
-        public Units Unit { get; set; }
+        public ProductSuply ProductSuply { get; set; }
         private double totalPrice;
         /// <summary>Общая цена</summary>
         public double TotalPrice
@@ -43,14 +36,13 @@ namespace Sem3_Coursework.Products
                 count = value;
             }
         }
-        public ObtainedProduct(string name, Units unit, double totalPrice, int count)
+        public ObtainedProduct(ProductSuply productSuply, double totalPrice, int count) 
         {
-            Name = name;
-            Unit = unit;
             TotalPrice = totalPrice;
             Count = count;
         }
     }
+    [Serializable]
     /// <summary>Класс для регистрации поступления продуктов питания на склад</summary>
     public class SupplyLog
     {
@@ -66,10 +58,7 @@ namespace Sem3_Coursework.Products
             }
             set
             {
-                if(value > DateTime.Now)
-                {
-                    throw new ArgumentException("Date argument exception!");
-                }
+                if(value > DateTime.Now) throw new ArgumentException("SupplyLog.Date argument exception");
                 date = value;
             } 
         }

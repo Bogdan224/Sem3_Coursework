@@ -8,7 +8,7 @@ namespace Sem3_Coursework.Products
 {
     public enum ProductGroup
     {
-        FirstCourse, SecondCourse, Dessert, Drink, Snack, Pastry, Baking
+        FirstCourse, SecondCourse, Dessert, Drink, Snack, Pastry, Baking, None
     }
 
     /// <summary>

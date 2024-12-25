@@ -8,7 +8,6 @@ namespace Sem3_Coursework.Products
 {
     public class Ingredient : IComparable<Ingredient>
     {
-        public string Name { get; set; }
         private double netWeight;
         public double NetWeight 
         {
@@ -20,7 +19,7 @@ namespace Sem3_Coursework.Products
             {
                 if(value < 0)
                 {
-                    throw new ArgumentException("NetWeight argument exception!");
+                    throw new ArgumentException();
                 }
                 netWeight = value;
             }
@@ -36,25 +35,28 @@ namespace Sem3_Coursework.Products
             {
                 if( value < 0 )
                 {
-                    throw new ArgumentException("GrossWeight argument exception!");
+                    throw new ArgumentException();
                 }
                 grossWeight = value;
             }
         }
-        public Ingredient(string name, double netWeight, double grossWeight)
+
+        public ProductSuply IngredientProduct { get; set; }
+        public Ingredient(double netWeight, double grossWeight, ProductSuply product)
         {
-            Name = name;
             NetWeight = netWeight;
             GrossWeight = grossWeight;
+            IngredientProduct = product;
         }
 
         public int CompareTo(Ingredient other)
         {
-            return Name.CompareTo(other.Name);
+            if (other == null) throw new ArgumentNullException();
+            return IngredientProduct.Name.CompareTo(other.IngredientProduct.Name);
         }
         public override string ToString()
         {
-            return $"Название: {Name}\n" +
+            return $"Название: {IngredientProduct.Name}\n" +
                 $"Вес нетто: {NetWeight} г.\n" +
                 $"Вес брутто: {GrossWeight} г.\n";
         }
